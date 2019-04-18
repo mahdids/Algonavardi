@@ -17,12 +17,8 @@ public class Solution {
                     }
                     else
                     {
-                        var min = Math.Min(Math.Min(result[i - 1, j], result[i, j - 1]), result[i - 1, j - 1]);
-                        result[i, j] = min + 1;
-                        if (result[i, j] > max)
-                        {
-                            max = result[i, j];
-                        }
+                        result[i, j] = Math.Min(Math.Min(result[i - 1, j], result[i, j - 1]), result[i - 1, j - 1])+1;
+                        max=Math.Max(max,result[i,j]);
                     }
                 }
             }
